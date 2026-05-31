@@ -46,4 +46,4 @@ src/
 assets/                 画像置き場（character.png をここに）
 ```
 
-※ Phaser 本体は CDN から読み込むため、初回はネット接続が必要です。
+※ Phaser 本体は `vendor/phaser.min.js` に同梱しているため、オフラインでも動きます。
