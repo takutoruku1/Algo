@@ -4,7 +4,20 @@
 
 ## 手順
 
-1. スプライトシート画像を `character.png` という名前でこのフォルダに保存する
+### A. 緑背景（クロマキー）の画像を使う場合 ← 今回の画像はこちら
+
+1. 元のスプライトシートを `character_raw.png` という名前でこのフォルダに保存
+2. リポジトリのルートで変換スクリプトを実行：
+   ```bash
+   node scripts/process-sheet.js
+   ```
+   → 緑背景を透過した `character.png` が生成され、推奨フレームサイズが表示されます
+3. 表示された `frameWidth` / `frameHeight` を `src/config.js` に反映
+4. ブラウザを再読み込み
+
+### B. すでに透過済みの画像がある場合
+
+1. 透過PNGを `character.png` としてこのフォルダに保存
 2. 画像の実寸に合わせて `src/config.js` の以下を調整する
    - `columns`（横のコマ数）／ `rows`（縦のコマ数）
    - `frameWidth` ＝ 画像の横幅 ÷ columns
